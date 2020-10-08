@@ -25,9 +25,6 @@ public class Validacion {
         return isTituloCorrecto && isURLCorrecto;
     }
 
-    public Map<String, String> getDatos() {
-        return this.datos;  
-    }
 
     public String getTitulo() {
         return this.datos.get(TITULOSTRING);
@@ -35,18 +32,6 @@ public class Validacion {
 
     public String getEnlace() {
         return this.datos.get(ENLACESTRING);
-    }
-
-    public void setDatos(Map<String, String> datos) {
-        this.datos = datos;
-    }
-
-    public void setTitulo(String titulo) {
-        this.datos.put(TITULOSTRING, titulo);
-    }
-
-    public void setEnlace(String enlace) {
-        this.datos.put(ENLACESTRING, enlace);
     }
 
 }

@@ -25,8 +25,7 @@ public class RegistrApp {
 
     static Boolean generarValidacionApp(String titulo, String url) {
         Validacion val = new Validacion(titulo, url);
-        Boolean status = val.realizarValidacion();
-        return status;
+        return val.realizarValidacion();
     }
 
     static Boolean procesoVerificacionApp(String professorName, Boolean status) {

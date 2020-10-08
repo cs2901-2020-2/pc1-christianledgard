@@ -58,6 +58,9 @@ class RegistrAppTest {
 
         Notificacion CE2A = new Notificacion(professorName,status);
 
+        Assert.assertEquals(val.getEnlace(),enlace);
+        Assert.assertEquals(val.getTitulo(),titulo);
+
         Assert.assertEquals(CE2A.getNombreProfesor(), professorName);
         Assert.assertEquals(CE2A.getStatus(), status);
     }
@@ -75,6 +78,21 @@ class RegistrAppTest {
 
         Assert.assertEquals(ra.generarValidacionApp(titulo,enlace), Boolean.TRUE);
         Assert.assertEquals(ra.procesoVerificacionApp("Jesus",Boolean.TRUE), Boolean.TRUE);
+    }
+
+    @Test
+    public void testCase7(){
+        List<String> lines = readFile(4, "input");
+
+        String professorName = "Jesus";
+
+        String titulo = lines.get(0);
+        String enlace = lines.get(1);
+
+        RegistrApp ra = new RegistrApp();
+
+        Assert.assertEquals(ra.generarValidacionApp(titulo,enlace), Boolean.FALSE);
+        Assert.assertEquals(ra.procesoVerificacionApp("Jesus",Boolean.FALSE), Boolean.TRUE);
     }
 
 
