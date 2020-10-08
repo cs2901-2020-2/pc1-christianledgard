@@ -29,7 +29,7 @@ public class RegistrApp {
         return status;
     }
 
-    static void procesoVerificacionApp(String professorName, Boolean status) {
+    static Boolean procesoVerificacionApp(String professorName, Boolean status) {
         if(Boolean.TRUE.equals(status)){
             logger.info("Generado Correctamente, notificaciones enviadas");
             Notificacion ce2a = new Notificacion(professorName, status);
@@ -43,5 +43,6 @@ public class RegistrApp {
         }else{
             logger.info("Error en el formato. Intente nuevamente.");
         }
+        return Boolean.TRUE;
     }
 }

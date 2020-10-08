@@ -62,6 +62,22 @@ class RegistrAppTest {
         Assert.assertEquals(CE2A.getStatus(), status);
     }
 
+    @Test
+    public void testCase6(){
+        List<String> lines = readFile(1, "input");
+
+        String professorName = "Jesus";
+
+        String titulo = lines.get(0);
+        String enlace = lines.get(1);
+
+        RegistrApp ra = new RegistrApp();
+
+        Assert.assertEquals(ra.generarValidacionApp(titulo,enlace), Boolean.TRUE);
+        Assert.assertEquals(ra.procesoVerificacionApp("Jesus",Boolean.TRUE), Boolean.TRUE);
+    }
+
+
 
     private void generic(int i) {
         List<String> lines = readFile(i, "input");
